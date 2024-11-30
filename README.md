@@ -49,7 +49,7 @@ Esta aplicación permite la búsqueda de información básica de clientes ingres
    git clone https://github.com/juanFajardo9999/client-front.git
 2. **Ejecutar la aplicación**
    ```bash
-   ./mvnw clean package 
+   ng s 
 3. **Ejecutar Test unitarios**
    ```bash
    ng test
