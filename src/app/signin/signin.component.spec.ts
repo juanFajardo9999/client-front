@@ -48,7 +48,15 @@ describe('SigninComponent', () => {
   });
 
   it('should call getClientInfo and navigate on valid form submission', () => {
-    const mockData = { id: 1, name: 'John Doe' };
+    const mockData = {
+      firstName: 'Juan',
+      secondName: 'Carlos',
+      firstLastName: 'Pérez',
+      secondLastName: 'Gómez',
+      phone: '1234567890',
+      address: 'Calle 123',
+      city: 'Bogotá',
+    };
     clientService.getClientInfo.and.returnValue(of(mockData));
 
     spyOn(router, 'navigate');
@@ -63,7 +71,7 @@ describe('SigninComponent', () => {
   });
 
   it('should handle error and open error modal on API error', () => {
-    const mockError = { error: { message: 'Error', details: 'Details' } };
+    const mockError = { error: { error: 'Error', message: 'Details' } };
     clientService.getClientInfo.and.returnValue(throwError(mockError));
 
     const errorModal = jasmine.createSpyObj('ErrorModalComponent', ['open']);

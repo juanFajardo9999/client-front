@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { NgClass, NgIf } from '@angular/common';
 import { ClientService } from '../services/client.service';
 import { ErrorModalComponent } from '../shared/error-modal/error-modal.component';
+import { ErrorMessage } from '../interfaces/error-message';
 
 @Component({
   selector: 'app-signin',
@@ -14,7 +15,7 @@ import { ErrorModalComponent } from '../shared/error-modal/error-modal.component
 })
 export class SigninComponent {
   form: FormGroup;
-  errorMessage: { message: string; details: string } = { message: '', details: '' };
+  errorMessage: ErrorMessage = { error: '', message: '' };
 
   constructor(
     private fb: FormBuilder,

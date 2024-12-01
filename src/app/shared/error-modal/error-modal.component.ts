@@ -1,5 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { ErrorMessage } from '../../interfaces/error-message';
 
 @Component({
   selector: 'app-error-modal',
@@ -9,7 +10,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./error-modal.component.scss'],
 })
 export class ErrorModalComponent {
-  @Input() errorMessage: { message: string; details: string } = { message: '', details: '' };
+  @Input() errorMessage: ErrorMessage = { error: '', message: '' };
   isVisible = false;
 
   open() {

@@ -33,7 +33,15 @@ describe('ClientService', () => {
     it('should perform a GET request and return client info', () => {
       const tipoDocumento = 'CC';
       const numeroDocumento = '1234567890';
-      const mockResponse = { id: 1, name: 'John Doe' };
+      const mockResponse = {
+        firstName: 'Juan',
+        secondName: 'Carlos',
+        firstLastName: 'Pérez',
+        secondLastName: 'Gómez',
+        phone: '1234567890',
+        address: 'Calle 123',
+        city: 'Bogotá',
+      };
 
       service.getClientInfo(tipoDocumento, numeroDocumento).subscribe((response) => {
         expect(response).toEqual(mockResponse);

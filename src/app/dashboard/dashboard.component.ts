@@ -1,7 +1,7 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { ClientService } from '../services/client.service';
 import { CommonModule } from '@angular/common';
+import { Client } from '../interfaces/client';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,9 +11,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
-  clientInfo = signal<any>(null);
+  clientInfo = signal<Client|null>(null);
 
-  constructor(private router: Router, private clientService: ClientService) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     const state = history.state;

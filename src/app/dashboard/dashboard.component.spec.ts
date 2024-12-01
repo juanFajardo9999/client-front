@@ -26,16 +26,21 @@ describe('DashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 
   it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 
   it('should set clientInfo based on history state', () => {
-    const mockState = { id: 1, name: 'John Doe' };
+    const mockState = {
+      firstName: 'Juan',
+      secondName: 'Carlos',
+      firstLastName: 'Pérez',
+      secondLastName: 'Gómez',
+      phone: '1234567890',
+      address: 'Calle 123',
+      city: 'Bogotá',
+    };
     spyOnProperty(history, 'state', 'get').and.returnValue(mockState);
 
     component.ngOnInit();
